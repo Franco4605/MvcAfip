@@ -1,0 +1,83 @@
+﻿@model MvcAfip.Models.Afip
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Cond_Iva" class="control-label">Condicion de Iva</label>
+    
+                <select asp-for="Cond_Iva" id="card" class="form-control">
+                    <option value="Monotributistas">Monotributistas</option>
+                    <option value="Responsable Inscripto">Responsable Inscripto</option>
+                    <option  value="Exento">Exento</option>
+                  </select>
+                <span asp-validation-for="Cond_Iva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cuit" class="control-label"></label>
+                <input asp-for="Cuit" class="form-control" />
+                <span asp-validation-for="Cuit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Razon_social" class="control-label"></label>
+                <input asp-for="Razon_social" class="form-control" />
+                <span asp-validation-for="Razon_social" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Domicilio" class="control-label"></label>
+                <input asp-for="Domicilio" class="form-control" />
+                <span asp-validation-for="Domicilio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Cond_Venta" class="control-label">Condicion de venta</label>
+                <br />
+                <ol>
+                <label asp-for="Cond_Venta" class="control-label">Contado</label>
+               
+                <input asp-for="Cond_Venta"  type="checkbox" value="Contado" >
+                <br />
+                <label asp-for="Cond_Venta" class="control-label">Cheques</label>
+                <input asp-for="Cond_Venta"  type="checkbox" value="Cheques" >
+                <br />
+                <label asp-for="Cond_Venta" class="control-label">Ticket</label>
+                <input asp-for="Cond_Venta"  type="checkbox" value="Ticket" >
+                <br />
+                <label asp-for="Cond_Venta" class="control-label">Otros</label>
+
+                <input asp-for="Cond_Venta"  type="checkbox" value="Otros" >
+
+
+                </ol>
+                  
+          
+                <span asp-validation-for="Cond_Venta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <br />
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary" >Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

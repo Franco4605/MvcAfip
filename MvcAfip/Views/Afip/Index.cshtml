@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MvcAfip.Models.Afip>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1> AFIP - Generación de comprobante</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table" bgcolor="#f0f8ff">
+    <thead>
+        <tr bgcolor="gray">
+            <th>
+                @Html.DisplayNameFor(model => model.Cond_Iva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cuit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Razon_social)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Domicilio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cond_Venta)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cond_Iva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cuit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Razon_social)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Domicilio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cond_Venta)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
